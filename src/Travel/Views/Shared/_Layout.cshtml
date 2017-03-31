@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The World - @ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/CSS/Site.css" />
+</head>
+
+<body>
+    <div id="sidebar">
+        <img src="~/Images/MyPicture.jpg" alt="headshot" class="headshot" />
+        <span id="userName">Andreea Dumitru</span>
+        <ul class="menu">
+            <li class="active"><a asp-controllee="App" asp-action="Index">Home</a></li>
+            <li><a asp-controllee="App" asp-action="About">About</a></li>
+            <li><a asp-controllee="App" asp-action="Contact">Contact</a></li>
+        </ul>
+    </div>
+    <div id="wrapper">
+        <div id="main">
+            <div>
+                <button id="sidebarToggle">Toggle button</button>
+            </div>
+            @RenderBody()
+        </div>
+        <div id="footer">
+            &copy; 2015 The Travel Ltd.
+        </div>
+    </div>
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/JS/Site.js"></script>
+</body>
+</html>
