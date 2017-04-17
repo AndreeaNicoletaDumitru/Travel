@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.CodeAnalysis;
 using Travel.Services;
 using Microsoft.Extensions.Configuration;
+using Travel.Models;
 
 namespace Travel
 {
@@ -34,6 +29,8 @@ namespace Travel
             services.AddSingleton(config);
             if (enviroment.IsEnvironment("Development"))
                 services.AddScoped<IMailService, MailService>();
+
+            services.AddDbContext<TravelContext>();
             services.AddMvc();
         }
 

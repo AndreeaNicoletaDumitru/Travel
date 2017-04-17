@@ -1,5 +1,8 @@
 {
   "MailSettings": {
     "ToAddress": "andreean.dumitru@yahoo.com"
+  },
+  "ConnectionStrings": {
+    "TravelDbContext": "Server=(localdb)\\MSSQLLocalDB;Database=Travel;Trusted_Connection=true;MultipleActiveResultSets=true;"
   }
 }

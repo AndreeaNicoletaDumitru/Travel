@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using System.Linq;
+using Travel.Models;
 using Travel.Services;
 using Travel.ViewModels;
 
@@ -9,15 +11,19 @@ namespace Travel.Controllers.Web
     {
         private IMailService mailService;
         private IConfigurationRoot config;
+        private TravelContext context;
 
-        public AppController(IMailService mailService, IConfigurationRoot config)
+        public AppController(IMailService mailService, IConfigurationRoot config, TravelContext context)
         {
             this.mailService = mailService;
             this.config = config;
+            this.context = context;
         }
 
         public IActionResult Index()
         {
+            var data = context.Trips.ToList();
+
             return View();
         }
 
