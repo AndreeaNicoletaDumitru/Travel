@@ -36,9 +36,7 @@ namespace Travel.Controllers.Web
         public IActionResult Contact(ContactViewModel contact)
         {
             if (contact.Email.Contains("aol.com"))
-                //to display the error on model side, not for a specific controller
                 ModelState.AddModelError("", "We don't support AOL");
-            //ModelState.AddModelError("Email", "We don't support AOL");
 
             if (ModelState.IsValid)
             {
