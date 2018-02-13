@@ -7,6 +7,7 @@ using Travel.ViewModels;
 
 namespace Travel.Controllers.Web
 {
+//Test new commit on master
     public class AppController : Controller
     {
         private IMailService mailService;
