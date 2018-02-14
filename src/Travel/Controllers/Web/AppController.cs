@@ -29,7 +29,7 @@ namespace Travel.Controllers.Web
             return View();
         }
 
-//comment for test in branch
+//test in master
         public IActionResult Contact()
         {
             return View();
